@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 function App() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const observerOptions = {
@@ -36,23 +37,48 @@ function App() {
   return (
     <div className="min-h-screen bg-[#F9FAFB] text-[#1F2937] font-sans">
       <header className={`sticky top-0 z-50 border-b transition-all duration-500 backdrop-blur-md ${isScrolled ? 'bg-white/90 border-gray-200 shadow-sm' : 'bg-white/70 border-gray-200/60'}`}>
-        <nav className="max-w-7xl mx-auto px-6 md:px-12 py-5 flex items-center justify-between">
-          <div className="text-3xl font-black tracking-tight">IAS</div>
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <div className="flex items-center justify-between py-5">
+            <div className="text-3xl font-black tracking-tight">IAS</div>
 
-          <div className="hidden md:flex items-center gap-10 text-sm font-semibold uppercase tracking-[0.25em] text-[#334155]">
-            <a href="#about" className="hover:underline hover:decoration-[#3B82F6] hover:underline-offset-4 transition-all duration-500">About</a>
-            <a href="#projects" className="hover:underline hover:decoration-[#3B82F6] hover:underline-offset-4 transition-all duration-500">Projects</a>
-            <a href="#case-studies" className="hover:underline hover:decoration-[#3B82F6] hover:underline-offset-4 transition-all duration-500">Case Studies</a>
-            <a href="#experience" className="hover:underline hover:decoration-[#3B82F6] hover:underline-offset-4 transition-all duration-500">Experience</a>
-            <a href="https://drive.google.com/file/d/13bZvGrQFDuZ4rnvOw3xlcxC_mQWaRv4i/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-5 py-2 border border-[#3B82F6] text-[#1F2937] rounded-md text-sm font-semibold hover:bg-[#EFF6FF] transition-all duration-500">
-              Resume
-            </a>
+            <nav className="hidden md:flex items-center gap-10 text-sm font-semibold uppercase tracking-[0.25em] text-[#334155]" aria-label="Primary navigation">
+              <a href="#about" className="hover:underline hover:decoration-[#3B82F6] hover:underline-offset-4 transition-all duration-500">About</a>
+              <a href="#projects" className="hover:underline hover:decoration-[#3B82F6] hover:underline-offset-4 transition-all duration-500">Projects</a>
+              <a href="#case-studies" className="hover:underline hover:decoration-[#3B82F6] hover:underline-offset-4 transition-all duration-500">Case Studies</a>
+              <a href="#experience" className="hover:underline hover:decoration-[#3B82F6] hover:underline-offset-4 transition-all duration-500">Experience</a>
+              <a href="https://drive.google.com/file/d/13bZvGrQFDuZ4rnvOw3xlcxC_mQWaRv4i/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-5 py-2 border border-[#3B82F6] text-[#1F2937] rounded-md text-sm font-semibold hover:bg-[#EFF6FF] transition-all duration-500">
+                Resume
+              </a>
+            </nav>
+
+            <button
+              type="button"
+              aria-controls="mobile-navigation"
+              aria-expanded={menuOpen}
+              aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+              onClick={() => setMenuOpen((prev) => !prev)}
+              className="md:hidden inline-flex items-center justify-center rounded-full border border-gray-200 px-4 py-2 text-sm font-semibold bg-white/90 shadow-sm hover:bg-[#F8FAFC] transition-all duration-200"
+            >
+              {menuOpen ? 'Close' : 'Menu'}
+            </button>
           </div>
 
-          <div className="md:hidden">
-            <button className="text-base font-semibold">Menu</button>
-          </div>
-        </nav>
+          <nav
+            id="mobile-navigation"
+            className={`md:hidden overflow-hidden transition-[max-height] duration-300 ${menuOpen ? 'max-h-96 pb-5' : 'max-h-0'}`}
+            aria-label="Mobile navigation"
+          >
+            <div className="flex flex-col gap-4 text-sm font-semibold uppercase tracking-[0.25em] text-[#334155] overflow-hidden">
+              <a href="#about" onClick={() => setMenuOpen(false)} className="block hover:underline hover:decoration-[#3B82F6] hover:underline-offset-4 transition-all duration-500">About</a>
+              <a href="#projects" onClick={() => setMenuOpen(false)} className="block hover:underline hover:decoration-[#3B82F6] hover:underline-offset-4 transition-all duration-500">Projects</a>
+              <a href="#case-studies" onClick={() => setMenuOpen(false)} className="block hover:underline hover:decoration-[#3B82F6] hover:underline-offset-4 transition-all duration-500">Case Studies</a>
+              <a href="#experience" onClick={() => setMenuOpen(false)} className="block hover:underline hover:decoration-[#3B82F6] hover:underline-offset-4 transition-all duration-500">Experience</a>
+              <a href="https://drive.google.com/file/d/13bZvGrQFDuZ4rnvOw3xlcxC_mQWaRv4i/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-5 py-2 border border-[#3B82F6] text-[#1F2937] rounded-md text-sm font-semibold hover:bg-[#EFF6FF] transition-all duration-500">
+                Resume
+              </a>
+            </div>
+          </nav>
+        </div>
       </header>
 
       <main className="max-w-7xl mx-auto px-6 md:px-12">
@@ -192,7 +218,13 @@ function App() {
           </div>
 
           <article className="mb-24 md:mb-32">
-            <h3 className="text-3xl md:text-4xl font-bold mb-12 md:mb-16">Live Client Projects</h3>
+            <div className="mb-8 max-w-3xl">
+              <h3 className="text-3xl md:text-4xl font-bold mb-4">Live Client Projects</h3>
+              <p className="text-sm text-[#64748B] leading-relaxed">
+                Each live project includes a working demo plus a GitHub code link so visitors can explore the implementation and case study details.
+              </p>
+            </div>
+
             <div className="grid md:grid-cols-2 gap-8 md:gap-12">
               <div className="group p-8 border border-gray-200 rounded-3xl bg-white shadow-sm hover:-translate-y-2 hover:shadow-lg transition-all duration-500 ease-out">
                 <div className="space-y-5">
@@ -201,9 +233,14 @@ function App() {
                   <p className="text-lg font-light leading-relaxed text-[#475569]">
                     Modern web platform delivering innovative solutions with seamless user experience and robust backend integration.
                   </p>
-                  <a href="https://example.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-6 py-3 border border-gray-200 font-semibold text-sm rounded-xl hover:border-[#3B82F6] hover:bg-[#EFF6FF] transition-all duration-500 ease-out">
-                    Live Demo
-                  </a>
+                  <div className="flex flex-wrap gap-3">
+                    <a href="https://agileengineeringandtechnicalservices.netlify.app" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-6 py-3 border border-gray-200 font-semibold text-sm rounded-xl hover:border-[#3B82F6] hover:bg-[#EFF6FF] transition-all duration-500 ease-out">
+                      Live Demo
+                    </a>
+                    <a href="https://github.com/Sinsydev/agile-engineering-and-technical-services" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-6 py-3 border border-gray-200 font-semibold text-sm rounded-xl hover:border-[#3B82F6] hover:bg-[#EFF6FF] transition-all duration-500 ease-out">
+                      View Code
+                    </a>
+                  </div>
                 </div>
               </div>
               <div className="group p-8 border border-gray-200 rounded-3xl bg-white shadow-sm hover:-translate-y-2 hover:shadow-lg transition-all duration-500 ease-out">
@@ -213,9 +250,14 @@ function App() {
                   <p className="text-lg font-light leading-relaxed text-[#475569]">
                     Automotive e-commerce platform showcasing vehicle inventory with advanced filtering and purchasing capabilities.
                   </p>
-                  <a href="https://example.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-6 py-3 border border-gray-200 font-semibold text-sm rounded-xl hover:border-[#3B82F6] hover:bg-[#EFF6FF] transition-all duration-500 ease-out">
-                    Live Demo
-                  </a>
+                  <div className="flex flex-wrap gap-3">
+                    <a href="https://kt-almadina-international-ltd.netlify.app" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-6 py-3 border border-gray-200 font-semibold text-sm rounded-xl hover:border-[#3B82F6] hover:bg-[#EFF6FF] transition-all duration-500 ease-out">
+                      Live Demo
+                    </a>
+                    <a href=" https://github.com/Sinsydev/Kt-almadina-motors-internation-limited" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-6 py-3 border border-gray-200 font-semibold text-sm rounded-xl hover:border-[#3B82F6] hover:bg-[#EFF6FF] transition-all duration-500 ease-out">
+                      View Code
+                    </a>
+                  </div>
                 </div>
               </div>
               <div className="group p-8 border border-gray-200 rounded-3xl bg-white shadow-sm hover:-translate-y-2 hover:shadow-lg transition-all duration-500 ease-out">
@@ -225,9 +267,14 @@ function App() {
                   <p className="text-lg font-light leading-relaxed text-[#475569]">
                     Premium brand experience with elegant design, luxury product showcase, and personalized customer journey.
                   </p>
-                  <a href="https://example.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-6 py-3 border border-gray-200 font-semibold text-sm rounded-xl hover:border-[#3B82F6] hover:bg-[#EFF6FF] transition-all duration-500 ease-out">
-                    Live Demo
-                  </a>
+                  <div className="flex flex-wrap gap-3">
+                    <a href="https://bbluxuryapartment.netlify.app/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-6 py-3 border border-gray-200 font-semibold text-sm rounded-xl hover:border-[#3B82F6] hover:bg-[#EFF6FF] transition-all duration-500 ease-out">
+                      Live Demo
+                    </a>
+                    <a href=" https://github.com/Sinsydev/bb-luxury-apartment-and-housing-estates" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-6 py-3 border border-gray-200 font-semibold text-sm rounded-xl hover:border-[#3B82F6] hover:bg-[#EFF6FF] transition-all duration-500 ease-out">
+                      View Code
+                    </a>
+                  </div>
                 </div>
               </div>
               <div className="group p-8 border border-gray-200 rounded-3xl bg-white shadow-sm hover:-translate-y-2 hover:shadow-lg transition-all duration-500 ease-out">
@@ -237,9 +284,14 @@ function App() {
                   <p className="text-lg font-light leading-relaxed text-[#475569]">
                     Restaurant discovery and reservation platform connecting diners with exceptional dining experiences worldwide.
                   </p>
-                  <a href="https://example.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-6 py-3 border border-gray-200 font-semibold text-sm rounded-xl hover:border-[#3B82F6] hover:bg-[#EFF6FF] transition-all duration-500 ease-out">
-                    Live Demo
-                  </a>
+                  <div className="flex flex-wrap gap-3">
+                    <a href="https://globaldine.netlify.app/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-6 py-3 border border-gray-200 font-semibold text-sm rounded-xl hover:border-[#3B82F6] hover:bg-[#EFF6FF] transition-all duration-500 ease-out">
+                      Live Demo
+                    </a>
+                    <a href=" https://github.com/Sinsydev/Global-Dine" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-6 py-3 border border-gray-200 font-semibold text-sm rounded-xl hover:border-[#3B82F6] hover:bg-[#EFF6FF] transition-all duration-500 ease-out">
+                      View Code
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -251,12 +303,12 @@ function App() {
               <div className="group p-8 border border-gray-200 rounded-3xl bg-[#F8FAFC] shadow-sm hover:-translate-y-2 hover:shadow-lg transition-all duration-500 ease-out">
                 <div className="space-y-5">
                   <p className="text-sm uppercase tracking-[0.3em] text-[#64748B]">Case Study</p>
-                  <h4 className="text-2xl md:text-3xl font-bold">AI Receptionist SaaS</h4>
+                  <h4 className="text-2xl md:text-3xl font-bold"> PropertyPulse AI</h4>
                   <p className="text-lg font-light leading-relaxed text-[#475569]">
-                    React streaming dashboard handling real-time AI token rendering. Architectural challenge: optimizing WebSocket connections for millions of concurrent events.
+                    The project was built to improve how businesses manage customer inquiries, appointment requests, and communication workflows through an AI-powered conversational interface.
                   </p>
                   <p className="text-sm font-semibold tracking-[0.22em] text-[#64748B]">REACT - TYPESCRIPT - WEBSOCKETS - AI</p>
-                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-6 py-3 border border-gray-200 font-semibold text-sm rounded-xl hover:border-[#3B82F6] hover:bg-[#EFF6FF] transition-all duration-500 ease-out">
+                  <a href=" https://github.com/Sinsydev/Propertypulse-ai-Case-Study" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-6 py-3 border border-gray-200 font-semibold text-sm rounded-xl hover:border-[#3B82F6] hover:bg-[#EFF6FF] transition-all duration-500 ease-out">
                     View Code
                   </a>
                 </div>
@@ -264,12 +316,12 @@ function App() {
               <div className="group p-8 border border-gray-200 rounded-3xl bg-[#F8FAFC] shadow-sm hover:-translate-y-2 hover:shadow-lg transition-all duration-500 ease-out">
                 <div className="space-y-5">
                   <p className="text-sm uppercase tracking-[0.3em] text-[#64748B]">Case Study</p>
-                  <h4 className="text-2xl md:text-3xl font-bold">Security System Dashboard</h4>
+                  <h4 className="text-2xl md:text-3xl font-bold">KS Security & Incident Reporting System Dashboard</h4>
                   <p className="text-lg font-light leading-relaxed text-[#475569]">
-                    Emergency alert terminal UI achieving 99.9% uptime SLA. Architectural challenge: designing fault-tolerant real-time data sync.
+                     A real-time incident reporting and monitoring platform designed to support faster communication, incident tracking, and response coordination for security operations.
                   </p>
                   <p className="text-sm font-semibold tracking-[0.22em] text-[#64748B]">REACT - FIREBASE - FIRESTORE - REAL-TIME</p>
-                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-6 py-3 border border-gray-200 font-semibold text-sm rounded-xl hover:border-[#3B82F6] hover:bg-[#EFF6FF] transition-all duration-500 ease-out">
+                  <a href="https://github.com/Sinsydev/AI-KSCSIRS" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-6 py-3 border border-gray-200 font-semibold text-sm rounded-xl hover:border-[#3B82F6] hover:bg-[#EFF6FF] transition-all duration-500 ease-out">
                     View Code
                   </a>
                 </div>
@@ -303,13 +355,13 @@ function App() {
           </div>
 
           <div className="space-y-12 mt-16">
-            <a href="mailto:ismail.said@example.com" className="inline-flex items-center justify-center px-8 py-4 bg-[#1F2937] text-white font-semibold rounded-xl hover:bg-[#111827] transition-all duration-500 ease-out">
+            <a href="mailto:ismailaminusaid1234@gmail.com" className="inline-flex items-center justify-center px-8 py-4 bg-[#1F2937] text-white font-semibold rounded-xl hover:bg-[#111827] transition-all duration-500 ease-out">
               Email Me
             </a>
 
             <div className="flex flex-col sm:flex-row gap-8 sm:gap-12 pt-8 text-[#334155]">
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-lg font-semibold hover:text-[#1F2937] transition-all duration-500">LinkedIn</a>
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-lg font-semibold hover:text-[#1F2937] transition-all duration-500">GitHub</a>
+              <a href="https://www.linkedin.com/in/sinsy-dev" target="_blank" rel="noopener noreferrer" className="text-lg font-semibold hover:text-[#1F2937] transition-all duration-500">LinkedIn</a>
+              <a href="https://github.com/Sinsydev" target="_blank" rel="noopener noreferrer" className="text-lg font-semibold hover:text-[#1F2937] transition-all duration-500">GitHub</a>
               <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-lg font-semibold hover:text-[#1F2937] transition-all duration-500">Twitter</a>
             </div>
           </div>

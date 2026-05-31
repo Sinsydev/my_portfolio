@@ -85,7 +85,7 @@ function App() {
         <section className="fade-in-section py-24 md:py-40 opacity-0">
           <div className="max-w-5xl space-y-8 md:space-y-10">
             <div className="space-y-5">
-              <h1 className="text-5xl md:text-7xl font-black leading-tight tracking-tight">
+              <h1 className="font-black leading-tight tracking-tight typography-display">
                 Ismail<br />Aminu Said
               </h1>
               <div className="w-20 h-1 rounded-full bg-[#3B82F6]/20"></div>
@@ -109,7 +109,7 @@ function App() {
         <section id="about" className="fade-in-section py-24 md:py-40 border-t border-gray-200 opacity-0">
           <div className="space-y-14">
             <div className="space-y-5 max-w-4xl">
-              <h2 className="text-5xl md:text-6xl font-black tracking-tight">About Me</h2>
+              <h2 className="font-black tracking-tight typography-section">About Me</h2>
               <div className="w-16 h-1 rounded-full bg-[#3B82F6]/20"></div>
             </div>
 
@@ -132,7 +132,7 @@ function App() {
 
         <section id="experience" className="fade-in-section py-24 md:py-40 border-t border-gray-200 opacity-0">
           <div className="mb-16 md:mb-24">
-            <h2 className="text-5xl md:text-6xl font-black tracking-tight">Experience</h2>
+            <h2 className="font-black tracking-tight typography-section">Experience</h2>
             <div className="w-16 h-1 rounded-full bg-[#3B82F6]/20 mt-4"></div>
           </div>
 
@@ -140,7 +140,7 @@ function App() {
             <div className="space-y-6 pb-12 border-b border-gray-200">
               <div className="grid md:grid-cols-3 gap-8 md:gap-16 items-start">
                 <div className="md:col-span-2">
-                  <h3 className="text-2xl md:text-3xl font-bold">Frontend Software Engineer</h3>
+                  <h3 className="font-bold typography-card">Frontend Software Engineer</h3>
                   <p className="text-lg font-light text-[#475569]">Agile Engineering & Technical Services ltd.</p>
                 </div>
                 <p className="text-sm font-semibold tracking-wide text-[#64748B] md:text-right">2023 - 2024</p>
@@ -164,7 +164,7 @@ function App() {
             <div className="space-y-6 pb-12 border-b border-gray-200">
               <div className="grid md:grid-cols-3 gap-8 md:gap-16 items-start">
                 <div className="md:col-span-2">
-                  <h3 className="text-2xl md:text-3xl font-bold"> Software Engineer</h3>
+                  <h3 className="font-bold typography-card">Software Engineer</h3>
                   <p className="text-lg font-light text-[#475569]"> Kt Almadina Motors International ltd.</p>
                 </div>
                 <p className="text-sm font-semibold tracking-wide text-[#64748B] md:text-right">2022 - 2023</p>
@@ -188,7 +188,7 @@ function App() {
             <div className="space-y-6">
               <div className="grid md:grid-cols-3 gap-8 md:gap-16 items-start">
                 <div className="md:col-span-2">
-                  <h3 className="text-2xl md:text-3xl font-bold">Frontend Developer</h3>
+                  <h3 className="font-bold typography-card">Frontend Developer</h3>
                   <p className="text-lg font-light text-[#475569]"> BB Luxury Apartment & Housing Estate</p>
                 </div>
                 <p className="text-sm font-semibold tracking-wide text-[#64748B] md:text-right">2020 - 2021</p>
@@ -213,23 +213,56 @@ function App() {
 
         <section id="projects" className="fade-in-section py-24 md:py-40 border-t border-gray-200 opacity-0">
           <div className="mb-16 md:mb-24">
-            <h2 className="text-5xl md:text-6xl font-black tracking-tight">Featured Projects</h2>
+            <h2 className="font-black tracking-tight typography-section">Featured Projects</h2>
             <div className="w-16 h-1 rounded-full bg-[#3B82F6]/20 mt-4"></div>
           </div>
 
           <article className="mb-24 md:mb-32">
             <div className="mb-8 max-w-3xl">
-              <h3 className="text-3xl md:text-4xl font-bold mb-4">Live Client Projects</h3>
-              <p className="text-sm text-[#64748B] leading-relaxed">
-                Each live project includes a working demo plus a GitHub code link so visitors can explore the implementation and case study details.
-              </p>
+              <h3 className="font-bold mb-4 typography-subsection">Live Client Projects</h3>
+              
             </div>
 
             <div className="grid md:grid-cols-2 gap-8 md:gap-12">
               <div className="group p-8 border border-gray-200 rounded-3xl bg-white shadow-sm hover:-translate-y-2 hover:shadow-lg transition-all duration-500 ease-out">
                 <div className="space-y-5">
                   <p className="text-sm uppercase tracking-[0.3em] text-[#64748B]">Live</p>
-                  <h4 className="text-2xl md:text-3xl font-bold">Agile Engineering</h4>
+                  <h4 className="font-bold typography-card"> KSITM Virtual Learning & Collaboration Platform</h4>
+                  <p className="text-lg font-light leading-relaxed text-[#475569]">
+                      This platform was engineered to modernize the educational ecosystem at KSITM, transitioning from traditional classroom delivery to a high-performance, digital-first learning environment. The system serves as a centralized hub for over 1,500 students and faculty, facilitating real-time knowledge sharing, course material distribution, and seamless academic collaboration.
+                  </p>
+                  <div className="flex flex-wrap gap-3">
+                    <a href="https://ksitm-vlcp-roan.vercel.app/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-6 py-3 border border-gray-200 font-semibold text-sm rounded-xl hover:border-[#3B82F6] hover:bg-[#EFF6FF] transition-all duration-500 ease-out">
+                      Live Demo
+                    </a>
+                    <a href="  " target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-6 py-3 border border-gray-200 font-semibold text-sm rounded-xl hover:border-[#3B82F6] hover:bg-[#EFF6FF] transition-all duration-500 ease-out">
+                       Private
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div className="group p-8 border border-gray-200 rounded-3xl bg-white shadow-sm hover:-translate-y-2 hover:shadow-lg transition-all duration-500 ease-out">
+                <div className="space-y-5">
+                  <p className="text-sm uppercase tracking-[0.3em] text-[#64748B]">Live</p>
+                  <h4 className="font-bold typography-card">KT Almadina Motors</h4>
+                  <p className="text-lg font-light leading-relaxed text-[#475569]">
+                    Automotive e-commerce platform showcasing vehicle inventory with advanced filtering and purchasing capabilities.
+                  </p>
+                  <div className="flex flex-wrap gap-3">
+                    <a href="https://kt-almadina-international-ltd.netlify.app" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-6 py-3 border border-gray-200 font-semibold text-sm rounded-xl hover:border-[#3B82F6] hover:bg-[#EFF6FF] transition-all duration-500 ease-out">
+                      Live Demo
+                    </a>
+                    <a href=" https://github.com/Sinsydev/Kt-almadina-motors-internation-limited" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-6 py-3 border border-gray-200 font-semibold text-sm rounded-xl hover:border-[#3B82F6] hover:bg-[#EFF6FF] transition-all duration-500 ease-out">
+                      View Code
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+                  <div className="group p-8 border border-gray-200 rounded-3xl bg-white shadow-sm hover:-translate-y-2 hover:shadow-lg transition-all duration-500 ease-out">
+                <div className="space-y-5">
+                  <p className="text-sm uppercase tracking-[0.3em] text-[#64748B]">Live</p>
+                  <h4 className="font-bold typography-card">Agile Engineering</h4>
                   <p className="text-lg font-light leading-relaxed text-[#475569]">
                     Modern web platform delivering innovative solutions with seamless user experience and robust backend integration.
                   </p>
@@ -246,24 +279,7 @@ function App() {
               <div className="group p-8 border border-gray-200 rounded-3xl bg-white shadow-sm hover:-translate-y-2 hover:shadow-lg transition-all duration-500 ease-out">
                 <div className="space-y-5">
                   <p className="text-sm uppercase tracking-[0.3em] text-[#64748B]">Live</p>
-                  <h4 className="text-2xl md:text-3xl font-bold">KT Almadina Motors</h4>
-                  <p className="text-lg font-light leading-relaxed text-[#475569]">
-                    Automotive e-commerce platform showcasing vehicle inventory with advanced filtering and purchasing capabilities.
-                  </p>
-                  <div className="flex flex-wrap gap-3">
-                    <a href="https://kt-almadina-international-ltd.netlify.app" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-6 py-3 border border-gray-200 font-semibold text-sm rounded-xl hover:border-[#3B82F6] hover:bg-[#EFF6FF] transition-all duration-500 ease-out">
-                      Live Demo
-                    </a>
-                    <a href=" https://github.com/Sinsydev/Kt-almadina-motors-internation-limited" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-6 py-3 border border-gray-200 font-semibold text-sm rounded-xl hover:border-[#3B82F6] hover:bg-[#EFF6FF] transition-all duration-500 ease-out">
-                      View Code
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div className="group p-8 border border-gray-200 rounded-3xl bg-white shadow-sm hover:-translate-y-2 hover:shadow-lg transition-all duration-500 ease-out">
-                <div className="space-y-5">
-                  <p className="text-sm uppercase tracking-[0.3em] text-[#64748B]">Live</p>
-                  <h4 className="text-2xl md:text-3xl font-bold">BB Luxury</h4>
+                  <h4 className="font-bold typography-card">BB Luxury</h4>
                   <p className="text-lg font-light leading-relaxed text-[#475569]">
                     Premium brand experience with elegant design, luxury product showcase, and personalized customer journey.
                   </p>
@@ -277,33 +293,17 @@ function App() {
                   </div>
                 </div>
               </div>
-              <div className="group p-8 border border-gray-200 rounded-3xl bg-white shadow-sm hover:-translate-y-2 hover:shadow-lg transition-all duration-500 ease-out">
-                <div className="space-y-5">
-                  <p className="text-sm uppercase tracking-[0.3em] text-[#64748B]">Live</p>
-                  <h4 className="text-2xl md:text-3xl font-bold">Global Dine</h4>
-                  <p className="text-lg font-light leading-relaxed text-[#475569]">
-                    Restaurant discovery and reservation platform connecting diners with exceptional dining experiences worldwide.
-                  </p>
-                  <div className="flex flex-wrap gap-3">
-                    <a href="https://globaldine.netlify.app/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-6 py-3 border border-gray-200 font-semibold text-sm rounded-xl hover:border-[#3B82F6] hover:bg-[#EFF6FF] transition-all duration-500 ease-out">
-                      Live Demo
-                    </a>
-                    <a href=" https://github.com/Sinsydev/Global-Dine" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-6 py-3 border border-gray-200 font-semibold text-sm rounded-xl hover:border-[#3B82F6] hover:bg-[#EFF6FF] transition-all duration-500 ease-out">
-                      View Code
-                    </a>
-                  </div>
-                </div>
-              </div>
+              
             </div>
           </article>
 
           <article id="case-studies">
-            <h3 className="text-3xl md:text-4xl font-bold mb-12 md:mb-16">Technical Case Studies</h3>
+            <h3 className="font-bold mb-12 md:mb-16 typography-subsection">Technical Case Studies</h3>
             <div className="grid md:grid-cols-2 gap-8 md:gap-12">
               <div className="group p-8 border border-gray-200 rounded-3xl bg-[#F8FAFC] shadow-sm hover:-translate-y-2 hover:shadow-lg transition-all duration-500 ease-out">
                 <div className="space-y-5">
                   <p className="text-sm uppercase tracking-[0.3em] text-[#64748B]">Case Study</p>
-                  <h4 className="text-2xl md:text-3xl font-bold"> PropertyPulse AI</h4>
+                  <h4 className="font-bold typography-card">PropertyPulse AI</h4>
                   <p className="text-lg font-light leading-relaxed text-[#475569]">
                     The project was built to improve how businesses manage customer inquiries, appointment requests, and communication workflows through an AI-powered conversational interface.
                   </p>
@@ -316,7 +316,7 @@ function App() {
               <div className="group p-8 border border-gray-200 rounded-3xl bg-[#F8FAFC] shadow-sm hover:-translate-y-2 hover:shadow-lg transition-all duration-500 ease-out">
                 <div className="space-y-5">
                   <p className="text-sm uppercase tracking-[0.3em] text-[#64748B]">Case Study</p>
-                  <h4 className="text-2xl md:text-3xl font-bold">KS Security & Incident Reporting System Dashboard</h4>
+                  <h4 className="font-bold typography-card">AI-KSCSIRS</h4>
                   <p className="text-lg font-light leading-relaxed text-[#475569]">
                      A real-time incident reporting and monitoring platform designed to support faster communication, incident tracking, and response coordination for security operations.
                   </p>
@@ -326,19 +326,7 @@ function App() {
                   </a>
                 </div>
               </div>
-              <div className="group p-8 border border-gray-200 rounded-3xl bg-[#F8FAFC] shadow-sm hover:-translate-y-2 hover:shadow-lg transition-all duration-500 ease-out">
-                <div className="space-y-5">
-                  <p className="text-sm uppercase tracking-[0.3em] text-[#64748B]">Case Study</p>
-                  <h4 className="text-2xl md:text-3xl font-bold">E-Commerce Platform</h4>
-                  <p className="text-lg font-light leading-relaxed text-[#475569]">
-                    Full-stack solution with product catalog and checkout flow. Architectural challenge: implementing scalable state management and payment integration.
-                  </p>
-                  <p className="text-sm font-semibold tracking-[0.22em] text-[#64748B]">REACT - NODE.JS - MONGODB - STRIPE</p>
-                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-6 py-3 border border-gray-200 font-semibold text-sm rounded-xl hover:border-[#3B82F6] hover:bg-[#EFF6FF] transition-all duration-500 ease-out">
-                    View Code
-                  </a>
-                </div>
-              </div>
+              
             </div>
           </article>
         </section>
@@ -346,7 +334,7 @@ function App() {
         <section className="fade-in-section py-24 md:py-40 border-t border-gray-200 opacity-0">
           <div className="space-y-8">
             <div className="space-y-5 max-w-4xl">
-              <h2 className="text-5xl md:text-6xl font-black tracking-tight">Let's Work Together</h2>
+              <h2 className="font-black tracking-tight typography-section">Let's Work Together</h2>
               <div className="w-16 h-1 rounded-full bg-[#3B82F6]/20"></div>
             </div>
             <p className="text-xl md:text-2xl font-light leading-relaxed text-[#475569] max-w-3xl">

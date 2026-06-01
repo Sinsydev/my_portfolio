@@ -46,7 +46,7 @@ function App() {
               <a href="#projects" className="hover:underline hover:decoration-[#3B82F6] hover:underline-offset-4 transition-all duration-500">Projects</a>
               <a href="#case-studies" className="hover:underline hover:decoration-[#3B82F6] hover:underline-offset-4 transition-all duration-500">Case Studies</a>
               <a href="#experience" className="hover:underline hover:decoration-[#3B82F6] hover:underline-offset-4 transition-all duration-500">Experience</a>
-              <a href="https://drive.google.com/file/d/13bZvGrQFDuZ4rnvOw3xlcxC_mQWaRv4i/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-5 py-2 border border-[#3B82F6] text-[#1F2937] rounded-md text-sm font-semibold hover:bg-[#EFF6FF] transition-all duration-500">
+              <a href=" https://drive.google.com/file/d/1Nzw11oTKEbOUWclaXjhIUH9gvk5eo_rK/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-5 py-2 border border-[#3B82F6] text-[#1F2937] rounded-md text-sm font-semibold hover:bg-[#EFF6FF] transition-all duration-500">
                 Resume
               </a>
             </nav>
@@ -92,7 +92,7 @@ function App() {
             </div>
 
             <p className="text-lg md:text-xl font-light leading-relaxed text-[#475569] max-w-3xl">
-              Frontend Software Engineer building accessible, performant, and refined experiences with React and TypeScript.
+              Frontend Software Engineer specializing in React, TypeScript, performance optimization, accessibility, responsive systems, and modern web application development.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-8">
@@ -115,16 +115,16 @@ function App() {
 
             <div className="space-y-8 max-w-4xl text-[#475569]">
               <p className="text-lg md:text-xl font-light leading-relaxed">
-                I'm a Frontend Software Engineer based in Nigeria, focused on building accessible, scalable, and user-friendly web applications with React, TypeScript, and modern frontend technologies.
+                 I'm a Frontend Software Engineer based in Nigeria, specializing in building accessible, responsive, and scalable web applications with React, TypeScript, and modern frontend technologies.
               </p>
               <p className="text-lg md:text-xl font-light leading-relaxed">
-                I enjoy turning ideas into reliable digital products that balance performance, usability, and clean engineering. My experience includes platforms for real estate, education, transportation, and operational systems.
+                 I enjoy transforming ideas into reliable digital products that combine strong user experience, performance, and maintainable engineering practices. My experience includes developing solutions across real estate, education, transportation, and operational systems, with a focus on creating intuitive interfaces and efficient workflows.
               </p>
               <p className="text-lg md:text-xl font-light leading-relaxed">
-                I work comfortably in remote and collaborative environments, where I value clear communication, ownership, documentation, and continuous learning.
+                 I thrive in remote and collaborative environments where clear communication, ownership, documentation, and continuous improvement are valued. Whether working independently or within a team, I enjoy solving real-world problems and delivering products that create meaningful impact for users.
               </p>
               <p className="text-lg md:text-xl font-light leading-relaxed">
-                I'm currently focused on growing as a frontend engineer while building modern web applications that are scalable, accessible, and production-ready.
+                Currently, I'm focused on advancing my frontend engineering expertise while building production-ready applications that prioritize performance, accessibility, and long-term scalability.
               </p>
             </div>
           </div>

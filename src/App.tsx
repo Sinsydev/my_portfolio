@@ -46,7 +46,7 @@ function App() {
               <a href="#projects" className="hover:underline hover:decoration-[#3B82F6] hover:underline-offset-4 transition-all duration-500">Projects</a>
               <a href="#case-studies" className="hover:underline hover:decoration-[#3B82F6] hover:underline-offset-4 transition-all duration-500">Case Studies</a>
               <a href="#experience" className="hover:underline hover:decoration-[#3B82F6] hover:underline-offset-4 transition-all duration-500">Experience</a>
-              <a href=" https://drive.google.com/file/d/1Nzw11oTKEbOUWclaXjhIUH9gvk5eo_rK/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-5 py-2 border border-[#3B82F6] text-[#1F2937] rounded-md text-sm font-semibold hover:bg-[#EFF6FF] transition-all duration-500">
+              <a href=" https://drive.google.com/file/d/19UJFRxgJp3wVfbSNQF0VvD6_3eFEwnJm/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-5 py-2 border border-[#3B82F6] text-[#1F2937] rounded-md text-sm font-semibold hover:bg-[#EFF6FF] transition-all duration-500">
                 Resume
               </a>
             </nav>

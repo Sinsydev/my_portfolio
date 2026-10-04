@@ -47,7 +47,7 @@ export const projects = [
     problem: 'Incident reports need to reach authenticated dashboard users as they are recorded.',
     approach: 'Route incident reports through authentication and Firestore into real-time dashboard updates.',
     stack: ['React', 'TypeScript', 'Tailwind CSS', 'Firebase Authentication', 'Firestore'],
-    featured: true,
+    featured: false,
     architecture: [
       'Incident reported',
       'Firebase Authentication',

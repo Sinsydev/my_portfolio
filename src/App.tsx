@@ -1,11 +1,15 @@
 import { useEffect, useState } from 'react'
+import CaseStudyDialog from './components/CaseStudyDialog'
 import SiteNavigation from './components/SiteNavigation'
+import type { Project } from './data/types'
+import FeaturedWork from './sections/FeaturedWork'
 import Hero from './sections/Hero'
 import ProofBar from './sections/ProofBar'
 
 type Theme = 'dark' | 'light'
 
 function App() {
+  const [activeProject, setActiveProject] = useState<Project | null>(null)
   const [theme, setTheme] = useState<Theme>(() => {
     const savedTheme = window.localStorage.getItem('portfolio-theme')
     return savedTheme === 'light' ? 'light' : 'dark'
@@ -30,7 +34,12 @@ function App() {
       <main id="main-content" className="page-content">
         <Hero />
         <ProofBar />
+        <FeaturedWork onViewCaseStudy={setActiveProject} />
       </main>
+      <CaseStudyDialog
+        project={activeProject}
+        onClose={() => setActiveProject(null)}
+      />
     </div>
   )
 }

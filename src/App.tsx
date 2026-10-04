@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import CaseStudyDialog from './components/CaseStudyDialog'
 import SiteNavigation from './components/SiteNavigation'
 import type { Project } from './data/types'
+import About from './sections/About'
 import Engineering from './sections/Engineering'
 import Experience from './sections/Experience'
 import FeaturedWork from './sections/FeaturedWork'
@@ -41,6 +42,7 @@ function App() {
         <Engineering />
         <Experience onViewCaseStudy={setActiveProject} />
         <Projects onViewCaseStudy={setActiveProject} />
+        <About />
       </main>
       <CaseStudyDialog
         project={activeProject}

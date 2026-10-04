@@ -1102,6 +1102,51 @@ ul {
   gap: 1rem;
 }
 
+.build-process {
+  display: grid;
+  gap: 0.8rem;
+  margin-top: 0.8rem;
+}
+
+.build-process h3 {
+  font-size: 1.25rem;
+  font-weight: 550;
+}
+
+.build-process ol {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.build-process li {
+  display: grid;
+  align-content: start;
+  gap: 0.35rem;
+  padding-top: 0.65rem;
+  border-top: 1px solid var(--border);
+}
+
+.build-process__index {
+  color: var(--primary);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+}
+
+.build-process li strong {
+  color: var(--text);
+  font-size: 0.84rem;
+}
+
+.build-process li > span:last-child {
+  color: var(--muted);
+  font-size: 0.74rem;
+  line-height: 1.5;
+}
+
 .contact-section {
   margin-top: 6.25rem;
   padding: 2.25rem 2rem;
@@ -2282,6 +2327,10 @@ h2 {
 }
 
 @media (max-width: 620px) {
+  .build-process ol {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .case-study-dialog {
     width: calc(100% - 1rem);
     max-height: 92dvh;

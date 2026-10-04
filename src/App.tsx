@@ -6,6 +6,7 @@ import Engineering from './sections/Engineering'
 import Experience from './sections/Experience'
 import FeaturedWork from './sections/FeaturedWork'
 import Hero from './sections/Hero'
+import Projects from './sections/Projects'
 import ProofBar from './sections/ProofBar'
 
 type Theme = 'dark' | 'light'
@@ -39,6 +40,7 @@ function App() {
         <FeaturedWork onViewCaseStudy={setActiveProject} />
         <Engineering />
         <Experience onViewCaseStudy={setActiveProject} />
+        <Projects onViewCaseStudy={setActiveProject} />
       </main>
       <CaseStudyDialog
         project={activeProject}

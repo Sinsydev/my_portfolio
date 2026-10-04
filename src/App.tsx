@@ -3,9 +3,11 @@ import CaseStudyDialog from './components/CaseStudyDialog'
 import SiteNavigation from './components/SiteNavigation'
 import type { Project } from './data/types'
 import About from './sections/About'
+import Contact from './sections/Contact'
 import Engineering from './sections/Engineering'
 import Experience from './sections/Experience'
 import FeaturedWork from './sections/FeaturedWork'
+import Footer from './sections/Footer'
 import Hero from './sections/Hero'
 import Projects from './sections/Projects'
 import ProofBar from './sections/ProofBar'
@@ -43,7 +45,9 @@ function App() {
         <Experience onViewCaseStudy={setActiveProject} />
         <Projects onViewCaseStudy={setActiveProject} />
         <About />
+        <Contact />
       </main>
+      <Footer />
       <CaseStudyDialog
         project={activeProject}
         onClose={() => setActiveProject(null)}

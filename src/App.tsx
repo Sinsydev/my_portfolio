@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react'
 import CaseStudyDialog from './components/CaseStudyDialog'
 import SiteNavigation from './components/SiteNavigation'
 import type { Project } from './data/types'
+import Engineering from './sections/Engineering'
+import Experience from './sections/Experience'
 import FeaturedWork from './sections/FeaturedWork'
 import Hero from './sections/Hero'
 import ProofBar from './sections/ProofBar'
@@ -35,6 +37,8 @@ function App() {
         <Hero />
         <ProofBar />
         <FeaturedWork onViewCaseStudy={setActiveProject} />
+        <Engineering />
+        <Experience onViewCaseStudy={setActiveProject} />
       </main>
       <CaseStudyDialog
         project={activeProject}

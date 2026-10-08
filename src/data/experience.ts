@@ -39,10 +39,10 @@ export const experience = [
     stack: ['React'],
   },
   {
-    title: 'KT Almadina Motors',
-    summary: 'Vehicle marketplace focused on search, filtering, and vehicle discovery.',
-    highlights: ['Responsive React interface', 'Vehicle search and filtering'],
-    stack: ['React'],
+    title: 'Smart Home Energy Dashboard',
+    summary: 'Dashboard UI for real-time energy metrics and operational analytics.',
+    highlights: ['Real-time energy metrics', 'Operational analytics dashboard'],
+    stack: ['React', 'TypeScript'],
   },
   {
     title: 'Agile Engineering',

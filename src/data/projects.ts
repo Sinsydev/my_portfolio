@@ -38,6 +38,7 @@ export const projects = [
       'Twilio connects the voice-oriented customer interaction workflow.',
       'OpenAI API is integrated into the AI receptionist workflow.',
     ],
+    github: 'https://github.com/Sinsydev/Propertypulse-ai-Case-Study',
     caseStudy: true,
   },
   {
@@ -66,6 +67,7 @@ export const projects = [
       'Firebase Authentication is part of the access flow.',
       'Incident data is synchronized through Firestore to dashboard views.',
     ],
+    github: 'https://github.com/Sinsydev/AI-KSCSIRS',
     caseStudy: true,
   },
   {
@@ -82,13 +84,7 @@ export const projects = [
       'Used reusable components to support maintainability',
     ],
     caseStudy: true,
-  },
-  {
-    title: 'KT Almadina Motors',
-    category: 'Vehicle marketplace',
-    summary: 'Vehicle marketplace focused on search, filtering, and vehicle discovery.',
-    stack: ['React'],
-    featured: false,
+    github: 'https://github.com/Sinsydev/University-E-Learning-Collaboration-Platform',
   },
   {
     title: 'Smart Home Energy Dashboard',
@@ -96,6 +92,7 @@ export const projects = [
     summary: 'Dashboard UI for real-time energy metrics and operational analytics.',
     stack: ['React', 'TypeScript'],
     featured: false,
+    github: 'https://github.com/Sinsydev/Smart-Home-Energy',
   },
   {
     title: 'Global Dine',

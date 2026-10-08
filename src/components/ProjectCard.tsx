@@ -30,10 +30,20 @@ function ProjectCard({ project, featuredIndex, projectNumber, compact = false, o
               </div>
             </>
           ) : (
-            <div className="operations-visual__flow">
-              <span>Incident report</span>
-              <b aria-hidden="true" />
-              <span>Live visibility</span>
+            <div className="operations-visual__panel">
+              <div className="operations-visual__alert">
+                <span className="operations-visual__alert-icon" aria-hidden="true">!</span>
+                <span className="operations-visual__alert-copy">
+                  <strong>Incident report</strong>
+                  <small>New report received</small>
+                </span>
+                <span className="operations-visual__live"><i />Live</span>
+              </div>
+              <div className="operations-visual__flow" aria-hidden="true">
+                <span><i>01</i>Report</span><b />
+                <span><i>02</i>Verify</span><b />
+                <span><i>03</i>Respond</span>
+              </div>
             </div>
           )}
         </div>

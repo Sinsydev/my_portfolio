@@ -42,7 +42,7 @@ function PortfolioApp() {
         <ProofBar />
         <FeaturedWork onViewCaseStudy={setActiveProject} />
         <Engineering />
-        <Experience onViewCaseStudy={setActiveProject} />
+        <Experience />
         <Projects onViewCaseStudy={setActiveProject} />
         <About />
         <Contact />

@@ -1,77 +1,112 @@
-<<<<<<< HEAD
-# React + TypeScript + Vite
+# Ismail Aminu Said — Software Engineering Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The source code for [ismailaminusaid.netlify.app](https://ismailaminusaid.netlify.app/), a responsive portfolio presenting selected software engineering projects, case studies, experience, and contact information.
 
-Currently, two official plugins are available:
+Built with React, TypeScript, and Vite. The site is a client-rendered frontend and is deployed to Netlify.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Contents
 
-## React Compiler
+- [Highlights](#highlights)
+- [Technology](#technology)
+- [Getting started](#getting-started)
+- [Available commands](#available-commands)
+- [Project structure](#project-structure)
+- [Updating portfolio content](#updating-portfolio-content)
+- [Deployment](#deployment)
+- [Quality and accessibility](#quality-and-accessibility)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Highlights
 
-## Expanding the ESLint configuration
+- Responsive portfolio sections for selected work, engineering, experience, projects, about, and contact.
+- Featured project cards and expanded case studies with project details, architecture, technology stack, and links.
+- Dark and light themes, with the selected theme saved in browser local storage.
+- Semantic page structure, labeled navigation, and a skip-to-content link.
+- Search and social sharing metadata, canonical URL, favicon, and theme color.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Technology
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **UI:** React 19
+- **Language:** TypeScript 6
+- **Build tool:** Vite 8
+- **Linting:** ESLint 10 with TypeScript support
+- **Hosting:** Netlify
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Getting started
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Prerequisites
+
+- Node.js 20, as configured for Netlify in `netlify.toml`. Use a Vite-compatible Node.js 20 release.
+- npm, included with Node.js.
+
+### Install and run locally
+
+```bash
+git clone <repository-url>
+cd my_portfolio
+npm ci
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Vite prints the local development URL in the terminal. Open that URL in a browser.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Available commands
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Start the local development server. |
+| `npm run lint` | Run ESLint across the project. |
+| `npm run build` | Type-check the project and create a production build in `dist/`. |
+| `npm run preview` | Serve the production build locally for a final check. |
+
+To validate a change before deploying:
+
+```bash
+npm run lint
+npm run build
+npm run preview
 ```
-=======
-# my_portfolio
->>>>>>> 2f32880b4a5c8220963abff49d02c9ff6c974ede
+
+## Project structure
+
+```text
+my_portfolio/
+├── public/                 # Static assets served as-is
+├── src/
+│   ├── components/         # Navigation, project cards, dialogs, and UI components
+│   ├── data/               # Project, experience, and portfolio content
+│   ├── sections/           # Page sections
+│   ├── App.tsx             # Application entry component
+│   ├── PortfolioApp.tsx    # Page composition and theme state
+│   └── index.css           # Global styles
+├── index.html              # Document metadata and app mount point
+├── netlify.toml            # Netlify build, publish, and SPA routing configuration
+├── package.json            # Scripts and dependencies
+└── vite.config.ts          # Vite configuration
+```
+
+## Updating portfolio content
+
+- Edit project descriptions, case-study details, technology stacks, and project URLs in `src/data/projects.ts`.
+- Update experience, skills, and education in the corresponding files under `src/data/`.
+- Edit the page sections and contact links in `src/sections/`.
+- Place static assets in `public/`.
+- Update the title, description, canonical URL, Open Graph metadata, and Twitter metadata in `index.html` when the production domain or site description changes.
+
+Review all external links and factual project details before publishing. Do not add secrets or private credentials to this public frontend repository.
+
+## Deployment
+
+The repository includes `netlify.toml` with the production deployment settings:
+
+- **Build command:** `npm run build`
+- **Publish directory:** `dist`
+- **Node.js:** 20
+- **Routing:** requests are rewritten to `index.html` for the client-rendered application
+
+To deploy, connect the Git repository to Netlify and deploy the production branch. Netlify installs dependencies, runs the configured build command, and publishes `dist`. For a custom domain, update the canonical and social URL metadata in `index.html` to match the final domain, then verify the deployed site and its preview cards.
+
+## Quality and accessibility
+
+Run the lint and production build commands before merging or deploying changes. The production build includes the TypeScript project build. There is currently no automated test script configured in `package.json`.
+
+When changing the interface, check the page at mobile and desktop sizes, navigate using a keyboard, confirm visible focus and readable contrast in both themes, and verify that dialogs and navigation controls work as expected.
